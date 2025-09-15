@@ -1,0 +1,147 @@
+/* ================================================== */
+/*     CSS DO SLIDER COM EFEITO FADE (COM CORREÇÃO)   */
+/* ================================================== */
+
+section.slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 0 !important;
+
+    /* ▼▼▼ ALTERAÇÃO AQUI ▼▼▼ */
+    /* Usando a proporção widescreen padrão de 16 por 9 */
+    aspect-ratio: 1600 / 533; 
+}
+
+/* Oculta os inputs de radio e as imagens mobile por padrão */
+.slider-content input, .img-mobile {
+    display: none;
+}
+
+/* --- LÓGICA DO FADE --- */
+
+.slides-wrapper {
+    position: absolute; /* Ocupa todo o espaço da section.slider */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+    z-index: 1; 
+}
+
+.slide-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Regras para mostrar o slide correspondente ao radio checado */
+#radio1:checked ~ .slides-wrapper .slide-box:nth-child(1),
+#radio2:checked ~ .slides-wrapper .slide-box:nth-child(2),
+#radio3:checked ~ .slides-wrapper .slide-box:nth-child(3),
+#radio4:checked ~ .slides-wrapper .slide-box:nth-child(4),
+#radio5:checked ~ .slides-wrapper .slide-box:nth-child(5),
+#radio6:checked ~ .slides-wrapper .slide-box:nth-child(6) {
+    opacity: 1; /* Torna o slide ativo visível */
+    z-index: 2; /* Traz o slide ativo para a frente */
+}
+
+
+/* --- CONTROLES DE NAVEGAÇÃO (Bolinhas e Setas) --- */
+.nav-manual, .nav-auto {
+    position: absolute;
+    bottom: 25px; 
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.nav-manual .manual-btn:not(:last-child), 
+.nav-auto div:not(:last-child){
+    margin-right: 10px;
+}
+
+.nav-auto div {
+    width: 12px;
+    height: 12px;
+    background: #ffcc00;
+    opacity: 0.7;
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav-manual .manual-btn {
+    width: 12px;
+    height: 12px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#radio1:checked ~ .nav-auto .auto-btn1,
+#radio2:checked ~ .nav-auto .auto-btn2,
+#radio3:checked ~ .nav-auto .auto-btn3,
+#radio4:checked ~ .nav-auto .auto-btn4,
+#radio5:checked ~ .nav-auto .auto-btn5,
+#radio6:checked ~ .nav-auto .auto-btn6 {
+    background-color: #1a3b69;
+    opacity: 1;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    color: #002244;
+    border: none;
+    font-size: 36px;
+    cursor: pointer;
+    z-index: 10;
+    transition: color 0.3s ease;
+    padding: 0 15px;
+}
+
+.arrow:hover {
+    color: #f0c419;
+}
+
+.left-arrow {
+    left: 15px;
+}
+
+.right-arrow {
+    right: 15px;
+}
+
+/* Responsividade para imagens */
+@media screen and (max-width: 900px) {
+    .img-desktop{
+        display: none;
+    }
+    .img-mobile{
+        display: block;
+    }
+}
+
+/* ADICIONE ESTE CÓDIGO NO FINAL DO ARQUIVO */
+@media screen and (max-width: 900px) {
+    section.slider {
+        /* Altera a proporção para telas menores, deixando o slide mais 'alto' */
+        aspect-ratio: 4 / 2;
+    }
+}

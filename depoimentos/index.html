@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seção de Depoimentos em Vídeo</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section class="depoimentos">
+    <h2 class="titulo-secao">Depoimentos</h2>
+
+    <div class="swiper meu-slider-depoimentos">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="video-container-popup" data-youtube-id="QoDGaT_8G80">
+                    <img src="https://i.ytimg.com/vi/QoDGaT_8G80/hqdefault.jpg" alt="Depoimento 1">
+                    <div class="play-icon"></div>
+                </div>
+                <div class="depoimento-texto">
+                    <h3 class="video-titulo">Leonardo, ex-aluno do Colégio Monteiro Lobato, estudou conosco do 6º ano ao Ensino Médio e hoje está cursando a Universidade Federal de Pernambuco. Ele destacou como o Colégio foi essencial para sua preparação e conquistas, fortalecendo sua base acadêmica e pessoal.</h3>
+                    <p class="video-autor">Leonardo, Empresa/Cargo</p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="video-container-popup" data-youtube-id="o0UbwsgyKvE">
+                    <img src="https://i.ytimg.com/vi/o0UbwsgyKvE/hqdefault.jpg" alt="Depoimento 2">
+                    <div class="play-icon"></div>
+                </div>
+                <div class="depoimento-texto">
+                    <h3 class="video-titulo">Outro depoimento incrível em vídeo</h3>
+                    <p class="video-autor">Nome, Empresa/Cargo</p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="video-container-popup" data-youtube-id="zJ7LADOWJH0">
+                    <img src="https://i.ytimg.com/vi/zJ7LADOWJH0/hqdefault.jpg" alt="Depoimento 2">
+                    <div class="play-icon"></div>
+                </div>
+                <div class="depoimento-texto">
+                    <h3 class="video-titulo">Outro depoimento incrível em vídeo</h3>
+                    <p class="video-autor">Nome, Empresa/Cargo</p>
+                </div>
+            </div>
+
+            </div>
+        
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div class="container-botao">
+        <a href="#" class="botao-mais-depoimentos">Ver todos os depoimentos</a>
+    </div>
+</section>
+
+<div id="video-modal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close">×</span>
+        <div id="modal-video-container">
+            </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

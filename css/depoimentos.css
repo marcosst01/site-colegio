@@ -1,0 +1,273 @@
+/* ============================================= */
+/* CSS CORRIGIDO PARA DEPOIMENTOS v.FINAL        */
+/* ============================================= */
+
+/* --- Estilos da Seção Principal --- */
+/* Usamos .depoimentos para garantir que o estilo só se aplique a esta seção */
+.depoimentos {
+    width: 95%;
+    max-width: 1100px;
+    padding: 40px 0;
+    margin: 0px auto; /* Adiciona margem em cima e embaixo para separar das outras seções */
+    text-align: center;
+}
+
+.depoimentos .titulo-secao {
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif; /* Garante a fonte correta */
+}
+
+/* --- Estilos do Carrossel --- */
+.depoimentos .meu-slider-depoimentos {
+    width: 100%;
+    padding: 0 60px;
+    padding-bottom: 60px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.depoimentos .swiper-slide {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    text-align: left;
+}
+
+/* --- Vídeo (Esquerda) --- */
+.depoimentos .video-container-popup {
+    flex: 0 0 50%;
+    position: relative;
+    cursor: pointer;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.depoimentos .video-container-popup img {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.depoimentos .video-container-popup:hover img {
+    transform: scale(1.05);
+}
+
+.depoimentos .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition: background-color 0.3s ease;
+}
+
+.depoimentos .play-icon::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 5px;
+}
+
+/* --- Texto (Direita) com Aspas --- */
+.depoimentos .depoimento-texto {
+    flex: 1;
+    position: relative;
+    padding-left: 30px;
+    padding-top: 20px;
+}
+
+.depoimentos .depoimento-texto::before {
+    content: "“";
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    font-size: 5rem;
+    font-weight: bold;
+    color: #e0e0e0;
+    z-index: -1;
+    font-family: serif; /* Uma fonte com aspas mais bonitas */
+}
+
+.depoimentos .video-titulo {
+    font-size: 1.1rem;
+    color: #333;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.depoimentos .video-autor {
+    font-size: 0.9rem;
+    color: #555;
+    font-weight: normal;
+}
+
+/* --- Navegação --- */
+.depoimentos .swiper-button-next,
+.depoimentos .swiper-button-prev {
+    color: #ffcc00;
+    top: 50%;
+}
+
+.depoimentos .swiper-button-prev {
+    left: 15px;
+    right: auto;
+}
+
+.depoimentos .swiper-button-next {
+    right: 15px;
+    left: auto;
+}
+
+.depoimentos .swiper-button-next::after,
+.depoimentos .swiper-button-prev::after {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.depoimentos .swiper-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    background: #ffcc00;
+    opacity: 0.7;
+}
+
+.depoimentos .swiper-pagination-bullet-active {
+    background: #1a3b69;
+    opacity: 1;
+}
+
+/* --- Botão "Ver mais" --- */
+.depoimentos .container-botao {
+    margin-top: 20px;
+}
+
+.depoimentos .botao-mais-depoimentos {
+    display: inline-block;
+    padding: 12px 25px;
+    border: 1px solid #003366;
+    color: #003366;
+    background-color: transparent;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.depoimentos .botao-mais-depoimentos:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+/* --- Modal (Pop-up) --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999; /* Z-index alto para ficar sobre tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.visible {
+    display: flex;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+}
+
+#modal-video-container {
+    position: relative;
+    padding-top: 56.25%;
+    height: 0;
+    background-color: #000;
+}
+
+#modal-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* ============================================= */
+/* CSS DE RESPONSIVIDADE PARA DEPOIMENTOS        */
+/* ============================================= */
+
+@media (max-width: 768px) {
+    .depoimentos .swiper-slide {
+        flex-direction: column;
+    }
+
+    .depoimentos .video-container-popup {
+        flex-basis: 100%;
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .depoimentos .depoimento-texto {
+        text-align: center;
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    /* REGRA ATUALIZADA PARA AS ASPAS */
+    .depoimentos .depoimento-texto::before {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        z-index: 0;
+        opacity: 0.15; 
+    }
+
+    .depoimentos .video-titulo,
+    .depoimentos .video-autor {
+        text-align: center;
+    }
+    
+    .depoimentos .meu-slider-depoimentos {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .depoimentos .swiper-button-next,
+    .depoimentos .swiper-button-prev {
+        top: 20%; 
+    }
+}

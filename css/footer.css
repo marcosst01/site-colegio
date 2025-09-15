@@ -1,0 +1,135 @@
+/* ============================================= */
+/* ESTILOS DO RODAPÉ (FOOTER)                    */
+/* ============================================= */
+
+.site-footer {
+    background-color: #003366; /* Azul escuro principal */
+    color: #a9d4ff; /* Azul claro para o texto padrão */
+    padding: 60px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start; /* ADICIONE ESTA LINHA */
+}
+
+.footer-col {
+    flex: 1; /* Ocupa espaço igualmente */
+    min-width: 220px; /* Largura mínima antes de quebrar a linha */
+}
+
+/* Coluna 1: Logo */
+.footer-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col-logo {
+    flex-basis: 250px; /* Define uma base de largura maior para a logo */
+    display: flex; /* Habilita flexbox para esta coluna */
+    align-items: flex-start; /* Alinha os itens ao topo da coluna */
+    /* Justify-content: center; Se você quisesse centralizar a logo verticalmente na COLUNA, use isso */
+}
+
+.footer-about {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Títulos das colunas */
+/* CÓDIGO ATUALIZADO COM A LINHA CENTRALIZADA */
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px; /* Aumenta o espaço para a linha abaixo */
+    position: relative; /* Essencial para posicionar a linha */
+}
+
+.footer-col h4::after {
+    content: ''; /* Cria um elemento vazio */
+    position: absolute;
+    bottom: 0; /* Posiciona a linha na base do título */
+    
+    /* A mágica da centralização acontece aqui */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Estilo da linha */
+    width: 45px; /* Largura da linha */
+    height: 3px; /* Espessura da linha */
+    background-color: #ffcc00; /* Cor amarela */
+}
+
+/* Listas de Contato e Navegação */
+.contact-list, .footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li, .footer-nav li {
+    margin-bottom: 12px;
+}
+
+.contact-list a, .footer-nav a {
+    color: #a9d4ff;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.contact-list a:hover, .footer-nav a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.contact-list i {
+    margin-right: 10px;
+    color: #ffcc00;
+    width: 20px;
+    text-align: center;
+}
+
+/* Coluna 4: Ícones de Redes Sociais */
+.footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background-color: #ffcc00;
+    color: #003366;
+    transform: translateY(-3px);
+}
+
+/* Barra Inferior */
+.footer-bottom-bar {
+    background-color: #002346; /* Um tom de azul ainda mais escuro */
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-bottom-bar p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #a9d4ff;
+}

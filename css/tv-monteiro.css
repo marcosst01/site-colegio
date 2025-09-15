@@ -1,0 +1,86 @@
+/* ============================================= */
+/* ESTILOS DA SEÇÃO TV MONTEIRO                  */
+/* ============================================= */
+
+.tv-monteiro-section {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #003366; /* Fundo branco para a seção */
+    background-image: linear-gradient(rgba(0, 51, 102, 0.85), rgba(0, 51, 102, 0.85)), url('../Img/foto-colegio.jpg');
+    background-size: cover; /* Faz a imagem cobrir toda a área */
+    background-position: center center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    
+}
+
+/* O .container é uma classe genérica que pode ser usada em outras seções também */
+.tv-monteiro-section .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tv-monteiro-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.tv-monteiro-section .section-title strong {
+    color: #ffcc00; /* Destaque amarelo para parte do título */
+    font-weight: 700;
+}
+
+.tv-monteiro-section .section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* A grade de vídeos responsiva */
+.tv-grid {
+    display: grid;
+    /* Cria colunas de no mínimo 300px, que se ajustam automaticamente */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; /* Espaçamento entre os cards */
+}
+
+.tv-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tv-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* As classes .video-container-popup e .play-icon são reaproveitadas do CSS dos depoimentos */
+/* Não precisa recriá-las se elas já estiverem no seu CSS de depoimentos */
+
+.tv-card-info {
+    padding: 20px;
+}
+
+.tv-card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #003366;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.tv-card-date {
+    font-size: 0.8rem;
+    color: #777;
+    margin: 0;
+}

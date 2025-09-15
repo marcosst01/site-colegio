@@ -1,0 +1,165 @@
+/* Layout Principal da Página de Detalhes */
+.event-detail-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.event-main-content {
+    flex: 3; /* Ocupa 3/4 do espaço */
+}
+
+.event-sidebar {
+    flex: 1; /* Ocupa 1/4 do espaço */
+    position: sticky;
+    top: 100px; /* Fixa a sidebar ao rolar */
+}
+
+/* Hero Banner (Imagem de capa) */
+.event-hero {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 40px;
+}
+
+.event-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+}
+
+.event-hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Novo container para alinhar categoria e data */
+.event-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Espaço entre os itens */
+    margin-bottom: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.event-meta .category {
+    text-transform: uppercase;
+}
+
+.event-meta .separator {
+    opacity: 0.7;
+}
+
+.event-hero h1 {
+    font-size: 2.8rem;
+    margin: 0 0 10px 0; /* Adiciona margem inferior */
+    line-height: 1.2;
+}
+
+/* Estilo para a descrição no banner */
+.event-hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+    max-width: 80%; /* Evita que a descrição ocupe a largura toda */
+}
+
+/* Galeria de Fotos */
+.photo-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.photo-item:hover img {
+    transform: scale(1.05);
+}
+
+
+/* Paginação */
+.pagination {
+    margin-top: 40px;
+    text-align: center;
+}
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 8px 15px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #003366;
+    border-radius: 5px;
+}
+.pagination a:hover {
+    background-color: #f0f0f0;
+}
+.pagination .current {
+    background-color: #003366;
+    color: #fff;
+    border-color: #003366;
+}
+
+/* Sidebar */
+.sidebar-widget {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+}
+.sidebar-widget h3 {
+    margin-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    color: #003366;
+}
+.sidebar-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar-widget li {
+    margin-bottom: 15px;
+}
+.sidebar-widget a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+}
+.sidebar-widget a:hover {
+    color: #0055a4;
+}
+
+/* Responsividade */
+@media(max-width: 992px) {
+    .event-detail-container {
+        flex-direction: column;
+    }
+    .event-sidebar {
+        position: static;
+        width: 100%;
+    }
+}

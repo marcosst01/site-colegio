@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1757820740,
+        "title": "teste9",
+        "date": "2025-09-10",
+        "category": "Fundamental 2",
+        "description": "teste",
+        "cover_image": "uploads\/gallery_68c63744099e0-sejam bem-vindos bom retorno! (1).jpg",
+        "images": [
+            "uploads\/gallery_68c63744099e0-sejam bem-vindos bom retorno! (1).jpg",
+            "uploads\/gallery_68c6374409c50-chrome-capture-2025-07-02.gif",
+            "uploads\/gallery_68c6374409e24-screencapture-colegioamericana-br-2025-06-24-11_27_38 - Copia.png",
+            "uploads\/gallery_68c637440a101-bg_video.jpg"
+        ]
+    },
+    {
+        "id": 1757820715,
+        "title": "teste8",
+        "date": "2025-09-09",
+        "category": "Educação Infantil",
+        "description": "teste",
+        "cover_image": "uploads\/gallery_68c6372b0d8ab-Design sem nome (5).jpg",
+        "images": [
+            "uploads\/gallery_68c6372b0d8ab-Design sem nome (5).jpg",
+            "uploads\/gallery_68c6372b0dbe0-lapela peixe.png",
+            "uploads\/gallery_68c6372b0de91-6887d98e-1f71-4136-afae-1a6d1d07c623.png"
+        ]
+    },
+    {
+        "id": 1757820691,
+        "title": "teste7",
+        "date": "2025-09-08",
+        "category": "Geral",
+        "description": "teste",
+        "cover_image": "uploads\/gallery_68c63713052b1-WhatsApp Image 2025-08-09 at 13.53.51.jpeg",
+        "images": [
+            "uploads\/gallery_68c63713052b1-WhatsApp Image 2025-08-09 at 13.53.51.jpeg",
+            "uploads\/gallery_68c63713056f7-IMG_7224.webp",
+            "uploads\/gallery_68c6371305a21-colorized_407_613_1fkfjjgkzj_[kolorize.cc].jpg"
+        ]
+    },
+    {
+        "id": 1757817063,
+        "title": "teste 6",
+        "date": "2025-09-07",
+        "category": "Educação Infantil",
+        "description": "",
+        "cover_image": "uploads\/gallery_68c628e7ae1a8-IMG_7224.webp",
+        "images": [
+            "uploads\/gallery_68c628e7ae1a8-IMG_7224.webp"
+        ]
+    },
+    {
+        "id": 1757816840,
+        "title": "teste5",
+        "date": "2025-09-05",
+        "category": "Geral",
+        "description": "",
+        "cover_image": "uploads\/gallery_68c628084b9e0-tag.dia.dos.avos (9 x 6 cm).jpg",
+        "images": [
+            "uploads\/gallery_68c628084b9e0-tag.dia.dos.avos (9 x 6 cm).jpg",
+            "uploads\/gallery_68c6283b9c514-dragão.chines1.jpg",
+            "uploads\/gallery_68c6283b9c6dc-dragão.chines.jpg"
+        ]
+    },
+    {
+        "id": 1757815942,
+        "title": "teste4",
+        "date": "2025-09-02",
+        "category": "Fundamental 2",
+        "description": "teste 4",
+        "images": [
+            "uploads\/gallery_68c6248625173-dragão.chines2.jpg"
+        ]
+    },
+    {
+        "id": 1757815916,
+        "title": "teste3",
+        "date": "2025-09-01",
+        "category": "Fundamental 1",
+        "description": "teste3",
+        "images": [
+            "uploads\/gallery_68c6246c70ca1-Screenshot_7.png"
+        ]
+    },
+    {
+        "id": 1757813173,
+        "title": "teste",
+        "date": "2025-08-20",
+        "category": "Educação Infantil",
+        "description": "teste",
+        "cover_image": "uploads\/gallery_68c6211f945eb-IMG_6415.webp",
+        "images": [
+            "uploads\/gallery_68c619b5bb55d-ChatGPT Image 17 de ago. de 2025, 18_04_47.png",
+            "uploads\/gallery_68c619b5bb78e-ChatGPT Image 17 de ago. de 2025, 12_44_17 copiar.png",
+            "uploads\/gallery_68c619b5bba47-ChatGPT Image 17 de ago. de 2025, 10_39_18.png",
+            "uploads\/gallery_68c620e0e64ea-screencapture-colegiomonteirolobato-events-folclore-2025-2025-09-13-22_42_26.png",
+            "uploads\/gallery_68c620f6bf798-Post from Canal da Belinha.jfif",
+            "uploads\/gallery_68c620f6bfad4-Festa de Aniversário Infantil Azul Convite (1).jpg",
+            "uploads\/gallery_68c620f6bfec3-Festa de Aniversário Infantil Azul Convite.jpg",
+            "uploads\/gallery_68c6210bd9ae6-saci.2.jpg",
+            "uploads\/gallery_68c6210bd9e77-saci.1.jpg",
+            "uploads\/gallery_68c6210bda19b-Design sem nome (7).jpg",
+            "uploads\/gallery_68c6211f9422b-WhatsApp Image 2025-07-25 at 20.26.24.jpeg",
+            "uploads\/gallery_68c6211f94429-IMG_8001.webp",
+            "uploads\/gallery_68c6211f945eb-IMG_6415.webp",
+            "uploads\/gallery_68c6217703738-colorized_407_613_1fkfjjgkzj_[kolorize.cc].jpg"
+        ]
+    },
+    {
+        "id": 1757812701,
+        "title": "teste.3",
+        "date": "2025-09-03",
+        "category": "Geral",
+        "description": "teste",
+        "images": [
+            "uploads\/gallery_68c617dd869da-WhatsApp Image 2025-09-11 at 13.19.07 (2).jpeg",
+            "uploads\/gallery_68c617dd86d9f-WhatsApp Image 2025-09-11 at 13.19.07 (1).jpeg",
+            "uploads\/gallery_68c617dd8716f-WhatsApp Image 2025-09-11 at 13.19.07.jpeg"
+        ]
+    }
+]

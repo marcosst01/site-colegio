@@ -1,0 +1,137 @@
+/* ============================================= */
+/* ESTILOS DA SEÇÃO ÚLTIMAS NOTÍCIAS             */
+/* ============================================= */
+
+.noticias-section {
+    width: 100%;
+    padding: 60px 0;
+    background-color: #f8f9fa; /* Um cinza bem claro para diferenciar da seção anterior */
+}
+
+/* Reutilizando a classe .container de outras seções */
+.noticias-section .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Reutilizando estilos do título que já criamos */
+.noticias-section .section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.noticias-section .section-title strong {
+    color: #ffcc00;
+    font-weight: 700;
+}
+
+.noticias-section .section-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* A grade de notícias responsiva */
+.noticias-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.noticia-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.07);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noticia-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-imagem {
+    width: 100%;
+    aspect-ratio: 16 / 10; /* Proporção da imagem */
+    overflow: hidden;
+}
+
+.noticia-imagem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    transition: transform 0.4s ease;
+}
+
+.noticia-card:hover .noticia-imagem img {
+    transform: scale(1.05); /* Efeito de zoom na imagem */
+}
+
+.noticia-conteudo {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Faz este container crescer para ocupar o espaço disponível */
+}
+
+.noticia-categoria {
+    display: inline-block;
+    background-color: #ffcc00;
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    align-self: flex-start; /* Alinha a categoria no início */
+}
+
+.noticia-titulo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #003366;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+}
+
+.noticia-resumo {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+    flex-grow: 1; /* Empurra o rodapé (meta) para o final do card */
+}
+
+.noticia-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #888;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 15px;
+}
+
+.noticia-leia-mais {
+    color: #003366;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.noticia-card:hover .noticia-leia-mais {
+    color: #ffcc00;
+}

@@ -1,0 +1,62 @@
+/* Estilo da Faixa de Matrículas */
+.matriculas-banner {
+    background-color: #ffc700; /* Cor de fundo amarela, similar à imagem */
+    padding: 20px 0; /* Espaçamento vertical */
+    font-family: 'Poppins', sans-serif; /* Fonte moderna (opcional) */
+}
+
+/* Adicione esta regra para remover o espaço acima da faixa */
+.matriculas-banner {
+    margin-top: 0;
+    margin-top: -10px !important; /* Ajuste o valor -20px conforme necessário */
+}
+
+.banner-content {
+    max-width: 1200px; /* Largura máxima para o conteúdo */
+    margin: 0 auto; /* Centraliza o conteúdo na página */
+    padding: 0 20px; /* Espaçamento lateral para não colar nas bordas */
+    display: flex; /* Alinha o texto e o botão na mesma linha */
+    justify-content: center; /* Empurra o texto para a esquerda e o botão para a direita */
+    align-items: center; /* Centraliza verticalmente o texto e o botão */
+    flex-wrap: wrap; /* Permite que os itens quebrem a linha em telas pequenas */
+    gap: 40px; /* Espaçamento entre o texto e o botão em telas menores */
+}
+
+.banner-text {
+    color: #0a2c6e; /* Cor do texto azul escuro */
+    font-size: 1.2rem; /* Tamanho do texto */
+    margin: 0; /* Remove margens padrão */
+}
+
+.banner-text strong {
+    font-weight: 600; /* Deixa a primeira parte em negrito */
+}
+
+.banner-button {
+    background-color: #0a2c6e; /* Cor de fundo do botão (azul escuro) */
+    color: #ffffff; /* Cor do texto do botão (branco) */
+    padding: 12px 28px; /* Espaçamento interno do botão (altura e largura) */
+    border-radius: 8px; /* Bordas arredondadas */
+    text-decoration: none; /* Remove o sublinhado do link */
+    font-weight: 600; /* Texto do botão em negrito */
+    white-space: nowrap; /* Impede que o texto do botão quebre a linha */
+    transition: background-color 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+.banner-button:hover {
+    background-color: #004a99; /* Cor do botão um pouco mais clara ao passar o mouse */
+}
+
+/* Responsividade para telas de celular */
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column; /* Coloca o texto e o botão um sobre o outro */
+        justify-content: center; /* Centraliza os itens */
+        text-align: center; /* Centraliza o texto */
+        gap: 15px; /* <-- ADICIONE ESTA LINHA PARA REDUZIR O ESPAÇO */
+    }
+
+    .banner-text {
+        font-size: 1.1rem; /* Diminui um pouco o texto no celular */
+    }
+}

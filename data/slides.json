@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1757821857,
+        "desktop_image": "uploads\/desktop_68c63ba1bdd16-site 01.jpg",
+        "mobile_image": "uploads\/mobile_68c63ba1be0ff-SLIDE 1 (1040 x 600 px).jpg",
+        "alt_text": "slide 1",
+        "link_url": ""
+    },
+    {
+        "id": 1757821908,
+        "desktop_image": "uploads\/desktop_68c63bd486e81-site 02.jpg",
+        "mobile_image": "uploads\/mobile_68c63bd4873ad-SLIDE 2 (1040 x 600 px).jpg",
+        "alt_text": "slide 2",
+        "link_url": ""
+    },
+    {
+        "id": 1757822058,
+        "desktop_image": "uploads\/desktop_68c63c6a49eb2-site 03.jpg",
+        "mobile_image": "uploads\/mobile_68c63c6a4a182-SLIDE 3 (1040 x 600 px).jpg",
+        "alt_text": "slide 3",
+        "link_url": ""
+    }
+]

@@ -1,0 +1,120 @@
+/* Container centralizado para a seção */
+.sessao-seja-mais .container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Título principal */
+.titulo-seja-mais {
+  font-size: 2.5rem;
+  color: #002244; /* azul escuro */
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Parágrafo explicativo */
+.descricao-seja-mais {
+  font-size: 1.15rem;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Botão Saiba mais */
+.btn-saiba-mais {
+  display: inline-block;
+  background-color: #002244; /* azul escuro */
+  color: #ffffff;
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-saiba-mais:hover {
+  background-color: #f0c419; /* amarelo vibrante */
+  color: #002244;
+}
+
+@media screen and (max-width: 768px) {
+  .titulo-seja-mais {
+    font-size: 1.8rem;
+  }
+
+  .descricao-seja-mais {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .btn-saiba-mais {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+}
+
+.seja-mais {
+  background-image: url('../Img/bg_video.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.seja-mais::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.seja-mais * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Layout com Flexbox */
+.seja-mais-flex {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Imagem do lado esquerdo */
+.seja-mais-img img {
+  max-width: 100%;
+  height: auto;
+  flex: 1 1 400px;
+}
+
+/* Texto do lado direito */
+.seja-mais-texto {
+  flex: 1 1 400px;
+  text-align: left;
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px) {
+  .seja-mais-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .seja-mais-texto {
+    text-align: center;
+  }
+}

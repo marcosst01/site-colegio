@@ -1,0 +1,171 @@
+/* ===================== */
+/* ==== ESTILOS BASE ==== */
+/* ===================== */
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 60px auto;
+  gap: 0;
+}
+
+.info-card {
+  flex: 1 1 300px;
+  max-width: 300px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  height: 400px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* Overlay com texto */
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px 20px;
+  text-align: center;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+  color: white;
+}
+
+/* Título no rodapé */
+.card-title-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 15px;
+  text-align: center;
+  z-index: 3;
+  transition: all 0.4s ease;
+}
+
+.card-title-bar h2 {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: -3px 0 10px;
+}
+
+.card-link {
+  font-weight: bold;
+  border-bottom: 2px solid white;
+  padding-bottom: 3px;
+  z-index: 3;
+  position: relative;
+}
+
+/* ======================= */
+/* ==== EFEITO DESKTOP ==== */
+/* ======================= */
+
+@media (min-width: 769px) {
+  .info-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .info-card:hover .card-title-bar {
+    background-color: transparent;
+  }
+}
+
+/* ======================= */
+/* ======= CORES ========= */
+/* ======================= */
+
+.card-blue .card-title-bar,
+.card-blue .card-overlay {
+  background-color: #f0c419;
+}
+
+.card-orange .card-title-bar,
+.card-orange .card-overlay {
+  background-color: rgba(255, 140, 0, 0.95);
+}
+
+.card-dark-blue .card-title-bar,
+.card-dark-blue .card-overlay {
+  background-color: rgba(36, 52, 98, 0.95);
+}
+
+/* =========================== */
+/* ==== MOBILE RESPONSIVO ==== */
+/* =========================== */
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .info-card {
+    width: 90%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .card-img {
+    position: relative;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .card-overlay {
+    position: relative;
+    height: auto;
+    opacity: 1;
+    background-color: transparent !important; /* remove fundo duplicado */
+    color: #333;
+    padding-top: 15px;
+  }
+
+  .card-title-bar {
+    position: relative;
+    background-color: transparent !important;
+    color: #222;
+  }
+
+  .card-title-bar h2 {
+    color: #222;
+  }
+
+  .card-link {
+    border-bottom: none;
+    color: #333;
+  }
+}

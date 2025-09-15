@@ -1,0 +1,375 @@
+/* ================================================== */
+/*           RESET UNIVERSAL DE BOX-SIZING           */
+/* ================================================== */
+/* Adicione este bloco no topo do seu arquivo CSS */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* O resto do seu CSS vem depois daqui... */
+
+/* Barra superior azul escura */
+.top-bar {
+  /* ... */
+}
+
+/* ... etc ... */
+
+/* Barra superior azul escura */
+/* Barra superior azul escura */
+.top-bar {
+  background-color: #002244;
+  color: #fff;
+  padding-top: 6px;    /* Mantém o padding vertical */
+  padding-bottom: 6px; /* Mantém o padding vertical */
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  /* As propriedades de flex, justify-content, etc., foram removidas daqui */
+}
+
+/* ============================================= */
+/* ESTILOS GERAIS PARA PÁGINAS INTERNAS          */
+/* ============================================= */
+
+/* Importa a fonte Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.7;
+}
+
+main .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Estilos do Banner Superior --- */
+.banner-pagina {
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-pagina h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+}
+
+.banner-pagina p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+
+/* --- Seção de Introdução --- */
+.secao-introducao {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.secao-introducao .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.coluna-texto, .coluna-imagem {
+    flex: 1;
+    min-width: 300px;
+}
+
+.coluna-texto h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 20px;
+    line-height: 1.3;
+}
+
+.coluna-imagem img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+
+/* --- Seção Pilares --- */
+.secao-pilares {
+    padding: 80px 0;
+    background-color: #f8f9fa; /* Cinza claro */
+}
+
+.secao-pilares h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 50px;
+}
+
+.pilares-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.pilar-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.pilar-card i {
+    font-size: 3rem;
+    color: #ffcc00;
+    margin-bottom: 20px;
+}
+
+.pilar-card h3 {
+    font-size: 1.5rem;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+
+/* --- Seção Nossos Espaços --- */
+.secao-espacos {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.secao-espacos h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 10px;
+}
+.subtitulo-espacos {
+    text-align: center;
+    color: #666;
+    margin-bottom: 50px;
+}
+
+.espacos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.espaco-foto {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    aspect-ratio: 1 / 1;
+}
+
+.espaco-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.espaco-foto:hover img {
+    transform: scale(1.1);
+}
+
+.espaco-foto span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 34, 68, 0.8), transparent);
+    color: #fff;
+    padding: 30px 20px 20px 20px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-align: left;
+}
+
+
+/* --- Seção CTA (Call to Action) --- */
+.secao-cta {
+    padding: 60px 20px;
+    background-color: #ffcc00; /* Amarelo */
+    text-align: center;
+}
+
+.secao-cta h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.secao-cta p {
+    color: #333;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.btn-cta {
+    background-color: #003366;
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #002244; /* Azul mais escuro */
+}
+
+
+/* --- Ajustes para telas menores --- */
+@media(max-width: 768px) {
+    .banner-pagina h1 { font-size: 2.5rem; }
+    .coluna-texto h2 { font-size: 1.8rem; }
+}
+
+/* ============================================= */
+/* ESTILOS DO RODAPÉ (FOOTER)                    */
+/* ============================================= */
+
+.site-footer {
+    background-color: #003366; /* Azul escuro principal */
+    color: #a9d4ff; /* Azul claro para o texto padrão */
+    padding: 60px 0 0 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: flex-start; /* ADICIONE ESTA LINHA */
+}
+
+.footer-col {
+    flex: 1; /* Ocupa espaço igualmente */
+    min-width: 220px; /* Largura mínima antes de quebrar a linha */
+}
+
+/* Coluna 1: Logo */
+.footer-logo {
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+
+.footer-col-logo {
+    flex-basis: 250px; /* Define uma base de largura maior para a logo */
+    display: flex; /* Habilita flexbox para esta coluna */
+    align-items: flex-start; /* Alinha os itens ao topo da coluna */
+    /* Justify-content: center; Se você quisesse centralizar a logo verticalmente na COLUNA, use isso */
+}
+
+.footer-about {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Títulos das colunas */
+/* CÓDIGO ATUALIZADO COM A LINHA CENTRALIZADA */
+
+.footer-col h4 {
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+    padding-bottom: 15px; /* Aumenta o espaço para a linha abaixo */
+    position: relative; /* Essencial para posicionar a linha */
+}
+
+.footer-col h4::after {
+    content: ''; /* Cria um elemento vazio */
+    position: absolute;
+    bottom: 0; /* Posiciona a linha na base do título */
+    
+    /* A mágica da centralização acontece aqui */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Estilo da linha */
+    width: 45px; /* Largura da linha */
+    height: 3px; /* Espessura da linha */
+    background-color: #ffcc00; /* Cor amarela */
+}
+
+/* Listas de Contato e Navegação */
+.contact-list, .footer-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-list li, .footer-nav li {
+    margin-bottom: 12px;
+}
+
+.contact-list a, .footer-nav a {
+    color: #a9d4ff;
+    text-decoration: none;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.contact-list a:hover, .footer-nav a:hover {
+    color: #ffffff;
+    padding-left: 5px;
+}
+
+.contact-list i {
+    margin-right: 10px;
+    color: #ffcc00;
+    width: 20px;
+    text-align: center;
+}
+
+/* Coluna 4: Ícones de Redes Sociais */
+.footer-social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 50%;
+    margin-right: 10px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    background-color: #ffcc00;
+    color: #003366;
+    transform: translateY(-3px);
+}
+
+/* Barra Inferior */
+.footer-bottom-bar {
+    background-color: #002346; /* Um tom de azul ainda mais escuro */
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.footer-bottom-bar p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #a9d4ff;
+}
