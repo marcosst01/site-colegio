@@ -82,7 +82,7 @@
                 <li><a href="#">Compartilha</a></li>
               </ul>
             </li>
-            <li class="mobile-only"><a href="#" class="matricula-btn-mobile">Pré matrícula</a></li>
+            
           </ul>
         </nav>
         <a href="#" class="matricula-btn desktop-only">Pré matrícula</a>
