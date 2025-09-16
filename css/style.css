@@ -156,3 +156,18 @@ footer {
   color: #ddd;
 }
 
+/* ============================================= */
+/* ESTILO PADRÃO PARA TÍTULOS DE SEÇÃO           */
+/* ============================================= */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #003366;
+    margin-bottom: 50px; /* Espaçamento abaixo do título */
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-title strong {
+    color: #ffcc00;
+    font-weight: 700;
+}

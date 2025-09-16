@@ -1,171 +1,127 @@
-/* ===================== */
-/* ==== ESTILOS BASE ==== */
-/* ===================== */
+/* ================================================== */
+/* CSS DOS CARDS DE ENSINO (VERSÃO ATUALIZADA)        */
+/* ================================================== */
 
+/* --- Estilos Base (Aplicados a todas as telas) --- */
 .card-container {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 60px auto;
-  gap: 0;
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 50px auto 0 auto;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .info-card {
-  flex: 1 1 300px;
-  max-width: 300px;
-  position: relative;
-  overflow: hidden;
-  color: white;
-  text-decoration: none;
-  height: 400px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
+    flex: 1 1 300px;
+    max-width: 350px;
+    text-decoration: none;
+    border-radius: 0; /* <-- CANTO ARREDONDADO REMOVIDO */
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+/* --- Estilos do Layout Mobile (imagem em cima, título embaixo) --- */
+.info-card {
+    display: flex;
+    flex-direction: column;
 }
 
 .card-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 0;
-  transition: transform 0.4s ease-in-out;
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Overlay com texto */
 .card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 10px 20px 20px;
-  text-align: center;
-  z-index: 2;
-  opacity: 0;
-  transition: opacity 0.4s ease-in-out;
-  color: white;
+    display: none;
 }
 
-/* Título no rodapé */
 .card-title-bar {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 15px;
-  text-align: center;
-  z-index: 3;
-  transition: all 0.4s ease;
+    color: white;
+    padding: 20px 15px;
+    text-align: center;
+    margin-top: auto;
 }
 
 .card-title-bar h2 {
-  margin: 0;
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.2rem;
-  letter-spacing: 1px;
+    margin: 0;
+    font-size: 1.1rem;
 }
 
-.card-text {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin: -3px 0 10px;
+/* --- Cores de Fundo da Barra de Título --- */
+.card-blue .card-title-bar { 
+    background-color: #ffcc00;
+    color: #003366;
 }
+.card-orange .card-title-bar { background-color: #d97800; }
+.card-dark-blue .card-title-bar { background-color: #243462; }
 
-.card-link {
-  font-weight: bold;
-  border-bottom: 2px solid white;
-  padding-bottom: 3px;
-  z-index: 3;
-  position: relative;
-}
 
-/* ======================= */
-/* ==== EFEITO DESKTOP ==== */
-/* ======================= */
-
+/* --- Estilos Desktop (Efeito de hover em telas maiores) --- */
 @media (min-width: 769px) {
-  .info-card:hover .card-overlay {
-    opacity: 1;
-  }
+    .card-container {
+        gap: 0;
+    }
 
-  .info-card:hover .card-title-bar {
-    background-color: transparent;
-  }
-}
+    .info-card {
+        position: relative;
+        height: 480px;
+        box-shadow: none;
+    }
 
-/* ======================= */
-/* ======= CORES ========= */
-/* ======================= */
+    .card-img {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+    }
 
-.card-blue .card-title-bar,
-.card-blue .card-overlay {
-  background-color: #f0c419;
-}
+    .card-title-bar {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        z-index: 3;
+        transition: opacity 0.5s ease; /* <-- VELOCIDADE DO HOVER ALTERADA */
+    }
 
-.card-orange .card-title-bar,
-.card-orange .card-overlay {
-  background-color: rgba(255, 140, 0, 0.95);
-}
+    .card-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        color: white;
+        padding: 20px;
+        opacity: 0;
+        transition: opacity 0.5s ease; /* <-- VELOCIDADE DO HOVER ALTERADA */
+        z-index: 2;
+    }
 
-.card-dark-blue .card-title-bar,
-.card-dark-blue .card-overlay {
-  background-color: rgba(36, 52, 98, 0.95);
-}
+    .card-overlay .card-text { font-size: 1rem; }
+    .card-overlay .card-link { margin-top: 15px; font-weight: bold; border-bottom: 2px solid white; padding-bottom: 2px;}
 
-/* =========================== */
-/* ==== MOBILE RESPONSIVO ==== */
-/* =========================== */
+    /* A Mágica do Hover */
+    .info-card:hover .card-overlay {
+        opacity: 1;
+    }
+    .info-card:hover .card-title-bar {
+        opacity: 0;
+    }
 
-@media (max-width: 768px) {
-  .card-container {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-  }
+    /* Cores do Overlay no Hover */
+    .card-blue:hover .card-overlay { 
+        background: rgba(255, 204, 0, 0.9);
+        color: #003366;
+    }
+    .card-orange:hover .card-overlay { background: rgba(217, 120, 0, 0.85); }
+    .card-dark-blue:hover .card-overlay { background: rgba(36, 52, 98, 0.85); }
 
-  .info-card {
-    width: 90%;
-    max-width: 350px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-
-  .card-img {
-    position: relative;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .card-overlay {
-    position: relative;
-    height: auto;
-    opacity: 1;
-    background-color: transparent !important; /* remove fundo duplicado */
-    color: #333;
-    padding-top: 15px;
-  }
-
-  .card-title-bar {
-    position: relative;
-    background-color: transparent !important;
-    color: #222;
-  }
-
-  .card-title-bar h2 {
-    color: #222;
-  }
-
-  .card-link {
-    border-bottom: none;
-    color: #333;
-  }
+    /* Ajuste da cor do link "Saiba mais" no card amarelo */
+    .card-blue:hover .card-overlay .card-link {
+        border-bottom-color: #003366;
+    }
 }

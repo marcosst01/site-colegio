@@ -59,10 +59,43 @@
     </div>
 </section>
 
-<section class="card-container">
-    <a href="educacao-infantil.php" class="info-card card-blue"><img src="Img/ed.infantil.jpg" alt="Educação Infantil" class="card-img"><div class="card-overlay"><p class="card-text">Uma base sólida para os primeiros passos na jornada do conhecimento, com afeto e ludicidade.</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>EDUCAÇÃO INFANTIL</h2></div></a>
-    <a href="#" class="info-card card-orange"><img src="Img/fundamental.1.jpg" alt="Ensino Fundamental I" class="card-img"><div class="card-overlay"><p class="card-text">Desenvolvimento da autonomia, do raciocínio lógico e do prazer em aprender (1º ao 5º ano).</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>ENSINO FUNDAMENTAL I</h2></div></a>
-    <a href="#" class="info-card card-dark-blue"><img src="Img/fundamental.2.jpg" alt="Ensino Fundamental II" class="card-img"><div class="card-overlay"><p class="card-text">Ampliação do conhecimento e preparação para os desafios futuros (6º ao 9º ano).</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>ENSINO FUNDAMENTAL II</h2></div></a>
+<section class="segmentos-section" style="padding: 10px 0 80px;">
+    <div class="container">
+        <h2 class="section-title" style="width: 100%; margin-bottom: -50px;">Nosso sistema de ensino</h2>
+        
+        <div class="card-container">
+            <a href="educacao-infantil.php" class="info-card card-blue">
+                <img src="Img/ed.infantil.jpg" alt="Educação Infantil" class="card-img">
+                <div class="card-overlay">
+                    <p class="card-text">Uma base sólida para os primeiros passos na jornada do conhecimento.</p>
+                    <span class="card-link">Saiba mais</span>
+                </div>
+                <div class="card-title-bar">
+                    <h2>EDUCAÇÃO INFANTIL</h2>
+                </div>
+            </a>
+            <a href="#" class="info-card card-orange">
+                <img src="Img/fundamental.1.jpg" alt="Ensino Fundamental I" class="card-img">
+                <div class="card-overlay">
+                    <p class="card-text">Desenvolvimento da autonomia, do raciocínio lógico e do prazer em aprender.</p>
+                    <span class="card-link">Saiba mais</span>
+                </div>
+                <div class="card-title-bar">
+                    <h2>ENSINO FUNDAMENTAL I</h2>
+                </div>
+            </a>
+            <a href="#" class="info-card card-dark-blue">
+                <img src="Img/fundamental.2.jpg" alt="Ensino Fundamental II" class="card-img">
+                <div class="card-overlay">
+                    <p class="card-text">Ampliação do conhecimento e preparação para os desafios futuros.</p>
+                    <span class="card-link">Saiba mais</span>
+                </div>
+                <div class="card-title-bar">
+                    <h2>ENSINO FUNDAMENTAL II</h2>
+                </div>
+            </a>
+        </div>
+    </div>
 </section>
 
 <section class="seja-mais">
