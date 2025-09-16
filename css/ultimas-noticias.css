@@ -1,21 +1,20 @@
 /* ============================================= */
-/* ESTILOS DA SEÇÃO ÚLTIMAS NOTÍCIAS             */
+/* ESTILOS DA SEÇÃO ÚLTIMAS NOTÍCIAS (CORRIGIDO) */
 /* ============================================= */
 
 .noticias-section {
     width: 100%;
     padding: 60px 0;
-    background-color: #f8f9fa; /* Um cinza bem claro para diferenciar da seção anterior */
+    background-color: #f8f9fa; /* Cinza claro de fundo */
 }
 
-/* Reutilizando a classe .container de outras seções */
 .noticias-section .container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* Reutilizando estilos do título que já criamos */
+/* Títulos da seção */
 .noticias-section .section-title {
     text-align: center;
     font-size: 2.5rem;
@@ -23,29 +22,24 @@
     margin-bottom: 10px;
     font-family: 'Poppins', sans-serif;
 }
-
 .noticias-section .section-title strong {
     color: #ffcc00;
-    font-weight: 700;
 }
-
 .noticias-section .section-subtitle {
     text-align: center;
     color: #666;
-    font-size: 1.1rem;
     margin-bottom: 50px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
-/* A grade de notícias responsiva */
+/* AQUI ESTÁ A REGRA QUE CONTROLA O TAMANHO */
 .noticias-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px; /* diminui espaço entre cards */
 }
 
+
+/* Estilos do card de notícia */
 .noticia-card {
     background-color: #ffffff;
     border-radius: 10px;
@@ -56,7 +50,6 @@
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 .noticia-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
@@ -64,26 +57,24 @@
 
 .noticia-imagem {
     width: 100%;
-    aspect-ratio: 16 / 10; /* Proporção da imagem */
+    aspect-ratio: 16 / 10;
     overflow: hidden;
 }
-
 .noticia-imagem img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    object-fit: cover;
     transition: transform 0.4s ease;
 }
-
 .noticia-card:hover .noticia-imagem img {
-    transform: scale(1.05); /* Efeito de zoom na imagem */
+    transform: scale(1.05);
 }
 
 .noticia-conteudo {
-    padding: 25px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Faz este container crescer para ocupar o espaço disponível */
+    flex-grow: 1;
 }
 
 .noticia-categoria {
@@ -95,7 +86,7 @@
     font-size: 0.75rem;
     font-weight: 700;
     margin-bottom: 15px;
-    align-self: flex-start; /* Alinha a categoria no início */
+    align-self: flex-start;
 }
 
 .noticia-titulo {
@@ -107,11 +98,17 @@
 }
 
 .noticia-resumo {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #666;
     line-height: 1.6;
     margin: 0 0 20px 0;
-    flex-grow: 1; /* Empurra o rodapé (meta) para o final do card */
+    flex-grow: 1;
+
+    /* --- Adicione as 4 linhas abaixo --- */
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Número de linhas desejado */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .noticia-meta {
@@ -131,7 +128,31 @@
     align-items: center;
     gap: 5px;
 }
-
 .noticia-card:hover .noticia-leia-mais {
     color: #ffcc00;
+}
+
+/* Estilo e alinhamento do botão "Ver todas as notícias" */
+.ver-mais-wrapper {
+    margin-top: 40px;
+    text-align: center; /* Centraliza o botão */
+}
+
+.btn-ver-mais-noticias {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: #fff;
+    color: #003366;
+    border: 2px solid #003366;
+    transition: all 0.3s ease; /* Transição suave para o hover */
+}
+
+.btn-ver-mais-noticias:hover {
+    background-color: #003366; /* Fundo inverte para azul */
+    color: #fff; /* Texto inverte para branco */
+    transform: translateY(-2px); /* Efeito sutil de levantar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }

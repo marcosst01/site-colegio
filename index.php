@@ -60,9 +60,9 @@
 </section>
 
 <section class="card-container">
-    <a href="educacao-infantil.php" class="info-card card-blue"><img src="Img/crianca-ei.png" alt="Educação Infantil" class="card-img"><div class="card-overlay"><p class="card-text">Uma base sólida para os primeiros passos na jornada do conhecimento, com afeto e ludicidade.</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>EDUCAÇÃO INFANTIL</h2></div></a>
-    <a href="#" class="info-card card-orange"><img src="Img/crianca-f1.png" alt="Ensino Fundamental I" class="card-img"><div class="card-overlay"><p class="card-text">Desenvolvimento da autonomia, do raciocínio lógico e do prazer em aprender (1º ao 5º ano).</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>ENSINO FUNDAMENTAL I</h2></div></a>
-    <a href="#" class="info-card card-dark-blue"><img src="Img/crianca-f2.png" alt="Ensino Fundamental II" class="card-img"><div class="card-overlay"><p class="card-text">Ampliação do conhecimento e preparação para os desafios futuros (6º ao 9º ano).</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>ENSINO FUNDAMENTAL II</h2></div></a>
+    <a href="educacao-infantil.php" class="info-card card-blue"><img src="Img/ed.infantil.jpg" alt="Educação Infantil" class="card-img"><div class="card-overlay"><p class="card-text">Uma base sólida para os primeiros passos na jornada do conhecimento, com afeto e ludicidade.</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>EDUCAÇÃO INFANTIL</h2></div></a>
+    <a href="#" class="info-card card-orange"><img src="Img/fundamental.1.jpg" alt="Ensino Fundamental I" class="card-img"><div class="card-overlay"><p class="card-text">Desenvolvimento da autonomia, do raciocínio lógico e do prazer em aprender (1º ao 5º ano).</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>ENSINO FUNDAMENTAL I</h2></div></a>
+    <a href="#" class="info-card card-dark-blue"><img src="Img/fundamental.2.jpg" alt="Ensino Fundamental II" class="card-img"><div class="card-overlay"><p class="card-text">Ampliação do conhecimento e preparação para os desafios futuros (6º ao 9º ano).</p><span class="card-link">Saiba mais</span></div><div class="card-title-bar"><h2>ENSINO FUNDAMENTAL II</h2></div></a>
 </section>
 
 <section class="seja-mais">
@@ -184,31 +184,40 @@ foreach ($latest_events as $event) {
             $all_news = file_exists($news_file) ? json_decode(file_get_contents($news_file), true) : [];
             $latest_news = array_slice($all_news, 0, 3);
             
+            // Define o idioma para Português para formatar a data
+            setlocale(LC_TIME, 'pt_BR.utf-8', 'pt_BR', 'portuguese');
+
             if (empty($latest_news)) {
                 echo "<p style='grid-column: 1 / -1;'>Nenhuma notícia publicada recentemente.</p>";
             } else {
                 foreach ($latest_news as $news_item) {
-                    echo '<a href="noticias.php" class="noticia-card">'; // Link para a página de todas as notícias
-                    echo '    <div class="noticia-imagem">';
-                    echo '        <img src="' . htmlspecialchars($news_item['image']) . '" alt="' . htmlspecialchars($news_item['title']) . '">';
-                    echo '    </div>';
+                    // --- LÓGICA DO RESUMO AUTOMÁTICO CORRIGIDA ---
+                    $full_content_decoded = html_entity_decode($news_item['full_content'] ?? '');
+                    $text_only_content = trim(strip_tags($full_content_decoded));
+                    $excerpt = mb_substr($text_only_content, 0, 150);
+                    if (mb_strlen($text_only_content) > 150) {
+                        $excerpt .= '...';
+                    }
+                    // ---------------------------------------------
+
+                    echo '<a href="noticia-detalhe.php?id=' . $news_item['id'] . '" class="noticia-card">';
+                    echo '    <div class="noticia-imagem"><img src="' . htmlspecialchars($news_item['image']) . '" alt="' . htmlspecialchars($news_item['title']) . '"></div>';
                     echo '    <div class="noticia-conteudo">';
                     echo '        <span class="noticia-categoria">' . htmlspecialchars($news_item['category']) . '</span>';
                     echo '        <h3 class="noticia-titulo">' . htmlspecialchars($news_item['title']) . '</h3>';
-                    echo '        <p class="noticia-resumo">' . htmlspecialchars($news_item['summary']) . '</p>';
+                    echo '        <p class="noticia-resumo">' . htmlspecialchars($excerpt) . '</p>';
                     echo '        <div class="noticia-meta">';
-                    echo '            <span class="noticia-data">' . htmlspecialchars($news_item['date']) . '</span>';
+                    // --- LÓGICA DA DATA CORRIGIDA ---
+                    echo '            <span class="noticia-data">' . strftime('%d de %B de %Y', strtotime($news_item['date'])) . '</span>';
                     echo '            <span class="noticia-leia-mais">Leia Mais <i class="fas fa-arrow-right"></i></span>';
-                    echo '        </div>';
-                    echo '    </div>';
-                    echo '</a>';
+                    echo '        </div></div></a>';
                 }
             }
             ?>
         </div>
-         <div class="ver-mais-wrapper" style="margin-top: 40px;">
-            <a href="noticias.php" class="btn-ver-mais" style="border-color: #003366; color: #003366; background-color: #fff;">Ver todas as notícias</a>
-        </div>
+         <div class="ver-mais-wrapper">
+            <a href="noticias.php" class="btn-ver-mais-noticias">Ver todas as notícias</a>
+            </div>
     </div>
 </section>
 

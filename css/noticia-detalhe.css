@@ -1,0 +1,66 @@
+/* Banner da página de notícia */
+.news-banner {
+    padding: 80px 40px;
+    color: #fff;
+    background-color: #003366; /* Cor de fundo caso a imagem não carregue */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+.news-banner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 34, 68, 0.5); /* Overlay escuro para legibilidade */
+}
+.news-banner .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+.news-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 0.9rem;
+    opacity: 0.9;
+    margin-bottom: 15px;
+}
+.news-meta .reading-time {
+    font-weight: 700;
+}
+.news-banner h1 {
+    font-size: 3rem;
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+}
+.news-banner .subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
+/* Layout Principal do Artigo */
+.article-detail-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: flex; gap: 40px; align-items: flex-start; }
+.article-main-content { flex: 3; }
+.article-sidebar { flex: 1; position: sticky; top: 100px; }
+
+/* Conteúdo do Artigo */
+.article-content h1, .article-content h2, .article-content h3 { color: #003366; }
+.article-content p { line-height: 1.8; margin-bottom: 1.5em; font-size: 1.1rem; color: #333; }
+.article-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
+
+/* Sidebar */
+.sidebar-widget { background-color: #f8f9fa; padding: 25px; border-radius: 10px; }
+.sidebar-widget h3 { margin-top: 0; border-bottom: 2px solid #ddd; padding-bottom: 10px; color: #003366; }
+.sidebar-widget ul { list-style: none; padding: 0; margin: 0; }
+.sidebar-widget li { margin-bottom: 15px; }
+.sidebar-widget a { text-decoration: none; color: #333; font-weight: 600; }
+.sidebar-widget a:hover { color: #0055a4; }
+
+@media(max-width: 992px) {
+    .article-detail-container { flex-direction: column; }
+    .article-sidebar { position: static; width: 100%; }
+    .news-banner h1 { font-size: 2.2rem; }
+}

@@ -2,7 +2,7 @@
 
 <main>
     <section class="banner-pagina"
-      style="background-image: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 51, 102, 0.6)), url('https://images.unsplash.com/photo-1518542568852-a56d3a433a22?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MzczODV8MHwxfHNlYXJjaHw3fHxjYWJhbsOnYSUyMGJyZW5jYW5kfGVufDB8fHx8MTcyNTQzNDcwN3ww&ixlib=rb-4.0.3&q=80&w=1080');">
+      style="background-image: linear-gradient(rgba(0, 51, 102, 0.6), rgba(0, 51, 102, 0.6)), url('Img/infantil.webp');">
       <div class="container">
         <h1>Educação Infantil</h1>
         <p>Os primeiros passos para um futuro brilhante</p>
@@ -13,13 +13,17 @@
       <div class="container">
         <div class="coluna-texto">
           <h2>Um lugar para crescer, aprender e ser feliz.</h2>
-          <p>A Educação Infantil no Colégio Monteiro Lobato é um universo de descobertas. Acreditamos que a base para
-            uma vida de aprendizado é construída com afeto, segurança e muitas brincadeiras. Nossa proposta pedagógica
-            valoriza cada criança como um indivíduo único, estimulando sua curiosidade natural e desenvolvendo
-            habilidades sociais e emocionais em um ambiente acolhedor.</p>
+          <p>Na educação infantil, considerada por muitos a etapa mais importante no processo de formação do ser humano, compreendemos a necessidade de um projeto pedagógico específico. As percepções de si mesmo assim como do mundo ao seu redor ganham forma e mudam conforme a sua imaginação. Pensando assim, nós, enquanto escola, temos um papel de grande importância nesse desenvolvimento, pois além de contribuir com a ação da família, promovemos mediação entre o indivíduo e a sociedade contribuindo positivamente na construção do conhecimento de forma assertiva, transmitindo cultura e possibilitando que a criança se humanize, se eduque, se socialize.</p>
+          <p>Oportunizamos o livre acesso das crianças sob um profundo olhar pedagógico, no intuito de que satisfaçam suas curiosidades, no descobrir, no experimentar, na fantasia, na imitação e na criação, sempre com muita ludicidade tornando o seu ambiente escolar um lugar seguro, aconchegante, feliz e de intenso e prazeroso aprendizado.</p>
         </div>
-        <div class="coluna-imagem">
-          <img src="https://images.unsplash.com/photo-1503919545857-a9de8369731d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MzczODV8MHwxfHNlYXJjaHwxfHxjYWJhbsOnYSUyMGJyZW5jYW5kfGVufDB8fHx8MTcyNTQzNDcwN3ww&ixlib=rb-4.0.3&q=80&w=1080" alt="Criança sorrindo enquanto brinca com blocos de montar">
+        
+        <div class="coluna-imagem" style="text-align: center;">
+            <figure>
+                <img src="Img/rita_cassia.webp" alt="Rita Cássia, Coordenadora da Educação Infantil" style="max-width: 85%; height: auto; border-radius: 15px;">
+                <figcaption style="margin-top: 15px; font-size: 0.9rem; color: #555; font-style: italic;">
+                    <strong>Rita Cássia</strong> | Coordenadora da Educação Infantil
+                </figcaption>
+            </figure>
         </div>
       </div>
     </section>
@@ -56,20 +60,20 @@
         <p class="subtitulo-espacos">Ambientes seguros e estimulantes, pensados para cada fase do desenvolvimento.</p>
         <div class="espacos-grid">
           <div class="espaco-foto">
-            <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MzczODV8MHwxfHNlYXJjaHwxfHxTYWxhJTIwZGUlMjBhdWxhJTIwZGUlMjBjcmVhbsOnYXN8ZW58MHx8fHwxNzI1NDM0OTg1fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Sala de aula colorida e organizada">
-            <span>Salas temáticas</span>
+            <img src="#" alt="Pisinas">
+            <span>Pisinas</span>
           </div>
           <div class="espaco-foto">
             <img src="https://images.unsplash.com/photo-1612871689353-cccf581d0d6b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MzczODV8MHwxfHNlYXJjaHwxfHxQYXJxdWUlMjBlc2NvbGFyfGVufDB8fHx8MTcyNTQzNTAwNnww&ixlib=rb-4.0.3&q=80&w=1080" alt="Playground ao ar livre com brinquedos">
-            <span>Parque externo</span>
+            <span>Parquinho</span>
           </div>
           <div class="espaco-foto">
             <img src="https://images.unsplash.com/photo-1594732386927-75a7c92a92e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MzczODV8MHwxfHNlYXJjaHwxfHxIb3J0YSUyMGVzY29sYXJ8ZW58MHx8fHwxNzI1NDM1MDIxfDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Crianças cuidando de uma horta na escola">
-            <span>Horta pedagógica</span>
+            <span>Horta</span>
           </div>
           <div class="espaco-foto">
             <img src="https://images.unsplash.com/photo-1543421276-f5664a78087a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0MzczODV8MHwxfHNlYXJjaHwxfHxCaWJsaW90ZWNhJTIwSW5mYW50aWx8ZW58MHx8fHwxNzI1NDM1MDQwfDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Crianças sentadas em um cantinho de leitura">
-            <span>Cantinho da leitura</span>
+            <span>Cozinha Educativa</span>
           </div>
         </div>
       </div>

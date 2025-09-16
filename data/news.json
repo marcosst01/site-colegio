@@ -1,0 +1,43 @@
+[
+    {
+        "id": 1757979517,
+        "title": "teste",
+        "summary": "teste descrição",
+        "full_content": "<p>teste conte&uacute;do<\/p>",
+        "category": "Geral",
+        "date": "2025-09-16",
+        "image": "uploads\/news_68c8a37dc2001-crianca-ei.png"
+    },
+    {
+        "id": 1757978424,
+        "title": "teste 5",
+        "full_content": "<p>teste<\/p>",
+        "category": "Geral",
+        "date": "16 de September de 2025",
+        "image": ""
+    },
+    {
+        "id": 1757975403,
+        "title": "teste 4",
+        "full_content": "<p>Para auxiliar nossos usu&aacute;rios a aproveitar ao m&aacute;ximo os recursos do IntegrAgenda, tamb&eacute;m estamos lan&ccedil;ando um v&iacute;deo tutorial abrangente, que servir&aacute; como guia completo de utiliza&ccedil;&atilde;o do aplicativo. Nesse v&iacute;deo, detalharemos passo a passo todas as funcionalidades dispon&iacute;veis, fornecendo dicas &uacute;teis e orienta&ccedil;&otilde;es pr&aacute;ticas para uma experi&ecirc;ncia escolar otimizada...<\/p>\r\n<p>&nbsp;<\/p>\r\n<p>O IntegrAgenda permite que pais e alunos acompanhem notifica&ccedil;&otilde;es importantes, troquem mensagens diretas com professores, registrem presen&ccedil;as e acessem agendas escolares, tudo isso de forma conveniente, atrav&eacute;s de seus dispositivos m&oacute;veis. Com essa ferramenta inovadora, garantimos uma comunica&ccedil;&atilde;o mais eficaz e em tempo real, al&eacute;m de proporcionar um gerenciamento simplificado das atividades acad&ecirc;micas.<\/p>\r\n<p>&nbsp;<\/p>\r\n<p><iframe title=\"YouTube video player\" src=\"https:\/\/www.youtube-nocookie.com\/embed\/ubXJUKumYDI?controls=0\" width=\"560\" height=\"315\" frameborder=\"0\" allowfullscreen=\"allowfullscreen\"><\/iframe><\/p>\r\n<p>&nbsp;<\/p>\r\n<p>Estamos empolgados em trazer essa nova solu&ccedil;&atilde;o tecnol&oacute;gica para a nossa comunidade escolar, com o objetivo de facilitar a comunica&ccedil;&atilde;o, promover a organiza&ccedil;&atilde;o e aprimorar a experi&ecirc;ncia acad&ecirc;mica de nossos alunos. O IntegrAgenda &eacute; um passo importante em dire&ccedil;&atilde;o a um ambiente educacional mais conectado e eficiente.<\/p>\r\n<p>&nbsp;<\/p>\r\n<p>Agradecemos a todos por sua cont&iacute;nua confian&ccedil;a em nossa institui&ccedil;&atilde;o e esperamos que o IntegrAgenda e o v&iacute;deo tutorial sejam recursos valiosos em sua jornada acad&ecirc;mica. Fiquem atentos &agrave;s pr&oacute;ximas atualiza&ccedil;&otilde;es e aproveitem essa nova ferramenta inovadora.<\/p>\r\n<p>&nbsp;<\/p>\r\n<p>Atenciosamente,<\/p>\r\n<p>Equipe Administrativa do Col&eacute;gio Monteiro Lobato<\/p>",
+        "category": "Eventos",
+        "date": "2025-09-15",
+        "image": "uploads\/news_68c8936b35f61-bg_video.jpg"
+    },
+    {
+        "id": 1757975390,
+        "title": "test3",
+        "summary": "teste3",
+        "category": "Eventos",
+        "date": "16 de September de 2025",
+        "image": "uploads\/news_68c8935ea4294-f2.webp"
+    },
+    {
+        "id": 1757974596,
+        "title": "teste3",
+        "summary": "teste3",
+        "category": "Eventos",
+        "date": "16 de September de 2025",
+        "image": "uploads\/news_68c890444c759-crianças.webp"
+    }
+]
