@@ -67,6 +67,7 @@ if (isset($_GET['edit'])) { $id_to_edit = (int)$_GET['edit']; foreach($all_news 
             <a href="manage_slides.php">Gerenciar Slides</a>
             <a href="manage_events.php">Gerenciar Eventos</a>
             <a href="manage_testimonials.php">Gerenciar Depoimentos</a>
+            <a href="manage_tv.php">Gerenciar TV Monteiro</a>
             <a href="logout.php" class="logout-btn">Sair</a>
         </nav>
     </header>

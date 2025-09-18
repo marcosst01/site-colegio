@@ -1,10 +1,10 @@
 /* ============================================= */
-/* ESTILOS DO RODAPÉ (FOOTER)                    */
+/* ESTILOS DO RODAPÉ (FOOTER) - CORRIGIDO        */
 /* ============================================= */
 
 .site-footer {
-    background-color: #003366; /* Azul escuro principal */
-    color: #a9d4ff; /* Azul claro para o texto padrão */
+    background-color: #003366;
+    color: #a9d4ff;
     padding: 60px 0 0 0;
     font-family: 'Poppins', sans-serif;
 }
@@ -16,12 +16,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
-    align-items: flex-start; /* ADICIONE ESTA LINHA */
+    align-items: flex-start;
 }
 
 .footer-col {
-    flex: 1; /* Ocupa espaço igualmente */
-    min-width: 220px; /* Largura mínima antes de quebrar a linha */
+    flex: 1;
+    min-width: 220px;
 }
 
 /* Coluna 1: Logo */
@@ -30,43 +30,32 @@
     margin-bottom: 20px;
 }
 
-.footer-col-logo {
-    flex-basis: 250px; /* Define uma base de largura maior para a logo */
-    display: flex; /* Habilita flexbox para esta coluna */
-    align-items: flex-start; /* Alinha os itens ao topo da coluna */
-    /* Justify-content: center; Se você quisesse centralizar a logo verticalmente na COLUNA, use isso */
-}
-
 .footer-about {
     font-size: 0.9rem;
     line-height: 1.6;
 }
 
-/* Títulos das colunas */
-/* CÓDIGO ATUALIZADO COM A LINHA CENTRALIZADA */
-
+/* Títulos das colunas - AGORA CENTRALIZADOS */
 .footer-col h4 {
     color: #ffffff;
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 20px 0;
-    padding-bottom: 15px; /* Aumenta o espaço para a linha abaixo */
-    position: relative; /* Essencial para posicionar a linha */
+    padding-bottom: 15px;
+    position: relative;
+    text-align: center; /* <-- ADICIONADO PARA CENTRALIZAR O TEXTO */
 }
 
+/* Linha amarela - AGORA CENTRALIZADA */
 .footer-col h4::after {
-    content: ''; /* Cria um elemento vazio */
+    content: '';
     position: absolute;
-    bottom: 0; /* Posiciona a linha na base do título */
-    
-    /* A mágica da centralização acontece aqui */
-    left: 50%;
-    transform: translateX(-50%);
-    
-    /* Estilo da linha */
-    width: 45px; /* Largura da linha */
-    height: 3px; /* Espessura da linha */
-    background-color: #ffcc00; /* Cor amarela */
+    bottom: 0;
+    left: 50%; /* <-- AJUSTADO */
+    transform: translateX(-50%); /* <-- AJUSTADO */
+    width: 45px;
+    height: 3px;
+    background-color: #ffcc00;
 }
 
 /* Listas de Contato e Navegação */
@@ -98,7 +87,7 @@
     text-align: center;
 }
 
-/* Coluna 4: Ícones de Redes Sociais */
+/* Ícones de Redes Sociais */
 .footer-social-icons a {
     display: inline-flex;
     align-items: center;
@@ -122,7 +111,7 @@
 
 /* Barra Inferior */
 .footer-bottom-bar {
-    background-color: #002346; /* Um tom de azul ainda mais escuro */
+    background-color: #002346;
     text-align: center;
     padding: 20px;
     margin-top: 50px;

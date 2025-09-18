@@ -1,12 +1,13 @@
-/* Container de Alinhamento APENAS DO CABEÇALHO */
-.header-container {
+/* ================================================= */
+/* ESTILO PADRÃO DO CONTAINER PRINCIPAL DO SITE      */
+/* ================================================= */
+
+.container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1200px;  /* Largura máxima idêntica à do header */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding-left: 20px;   /* Espaçamento lateral idêntico ao do header */
+    padding-right: 20px;  /* Espaçamento lateral idêntico ao do header */
+    box-sizing: border-box; /* Garante que o padding não aumente a largura total */
 }

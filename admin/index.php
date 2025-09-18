@@ -12,12 +12,13 @@
         <header class="admin-header">
             <h1>Painel do Colégio Monteiro Lobato</h1>
             <nav>
-                <a href="index.php">Dashboard</a>
-                <a href="manage_slides.php">Gerenciar Slides</a> <a href="manage_news.php">Gerenciar Notícias</a>
+                <a href="manage_slides.php">Gerenciar Slides</a>
+                <a href="manage_news.php">Gerenciar Notícias</a>
                 <a href="manage_events.php">Gerenciar Eventos</a>
                 <a href="manage_testimonials.php">Gerenciar Depoimentos</a>
+                <a href="manage_tv.php">Gerenciar TV Monteiro</a>
+                <a href="manage_tv.php">Gerenciar TV Monteiro</a>
                 <a href="logout.php" class="logout-btn">Sair</a>
-            </nav>
         </header>
         <main class="dashboard">
             <h2>Bem-vindo(a), <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>

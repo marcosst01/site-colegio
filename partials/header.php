@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,9 +20,7 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/educacao-infantil.css">
   <link rel="stylesheet" href="css/evento-detalhe.css">
-  <link rel="stylesheet" href="css/container.principal.css">
-  <link rel="stylesheet" href="css/evento-detalhe.css">
-  <link rel="stylesheet" href="css/noticia-detalhe.css"> 
+  <link rel="stylesheet" href="css/noticia-detalhe.css">
   <link rel="stylesheet" href="css/container.principal.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -46,6 +45,7 @@
 
   <header class="main-header">
     <div class="header-container">
+      <!-- Logo -->
       <a href="index.php" style="text-decoration: none;">
         <div class="logo-area">
           <div class="logo">
@@ -53,39 +53,41 @@
           </div>
         </div>
       </a>
+      
+      <!-- Menu centralizado -->
+      <nav class="nav-menu">
+        <ul>
+          <li class="has-submenu"><a href="#">O Colégio ▾</a>
+            <ul class="submenu">
+              <li><a href="#">História</a></li>
+              <li><a href="#">Estrutura</a></li>
+            </ul>
+          </li>
+          <li class="has-submenu"><a href="#">Ensino ▾</a>
+            <ul class="submenu">
+              <li><a href="educacao-infantil.php">Educação Infantil</a></li>
+              <li><a href="fundamental-1.php">Fundamental I</a></li>
+              <li><a href="#">Fundamental II</a></li>
+            </ul>
+          </li>
+          <li><a href="noticias.php">Jornal Monteiro</a></li>
+          <li><a href="eventos.php">Eventos</a></li>
+          <li class="has-submenu"><a href="#">Plataformas ▾</a>
+            <ul class="submenu">
+              <li><a href="#">Unoi</a></li>
+              <li><a href="#">Compartilha</a></li>
+            </ul>
+          </li>
+          <li class="mobile-only"><a href="#" class="matricula-btn-mobile">Pré matrícula</a></li>
+        </ul>
+      </nav>
+
+      <!-- Botão matrícula e menu mobile -->
       <div class="header-right">
-        <button class="hamburger" aria-label="Abrir menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="nav-menu">
-          <ul>
-            <li class="has-submenu"><a href="#">O Colégio ▾</a>
-              <ul class="submenu">
-                <li><a href="#">História</a></li>
-                <li><a href="#">Estrutura</a></li>
-              </ul>
-            </li>
-            <li class="has-submenu"><a href="#">Ensino ▾</a>
-              <ul class="submenu">
-                <li><a href="educacao-infantil.php">Educação Infantil</a></li>
-                <li><a href="#">Fundamental I</a></li>
-                <li><a href="#">Fundamental II</a></li>
-              </ul>
-            </li>
-            <li><a href="noticias.php">Jornal Monteiro</a></li>
-            <li><a href="eventos.php">Eventos</a></li>
-            <li class="has-submenu"><a href="#">Plataformas ▾</a>
-              <ul class="submenu">
-                <li><a href="#">Unoi</a></li>
-                <li><a href="#">Compartilha</a></li>
-              </ul>
-            </li>
-            
-          </ul>
-        </nav>
         <a href="#" class="matricula-btn desktop-only">Pré matrícula</a>
+        <button class="hamburger" aria-label="Abrir menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </div>
   </header>
