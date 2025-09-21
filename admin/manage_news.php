@@ -3,12 +3,23 @@ include 'auth.php';
 
 $news_file = '../data/news.json';
 
-// ... (funções PHP no topo do arquivo - getNews, saveNews, etc. permanecem as mesmas) ...
-function getNews() { global $news_file; if (!file_exists($news_file)) return []; return json_decode(file_get_contents($news_file), true) ?? []; }
-function saveNews($news) { global $news_file; file_put_contents($news_file, json_encode($news, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)); }
+function getNews() {
+    global $news_file;
+    if (!file_exists($news_file)) return [];
+    return json_decode(file_get_contents($news_file), true) ?? [];
+}
+
+function saveNews($news) {
+    global $news_file;
+    file_put_contents($news_file, json_encode($news, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+}
+
+// Processamento do formulário
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['title'])) {
     $news = getNews();
+    $id = $_POST['id'] ? (int)$_POST['id'] : time();
     $image_path = $_POST['existing_image'] ?? '';
+
     if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
         $upload_dir = '../uploads/';
         $image_name = uniqid('news_') . '-' . basename($_FILES['image']['name']);
@@ -17,8 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['title'])) {
             $image_path = 'uploads/' . $image_name;
         }
     }
+
     $post_data = [
-        'id' => $_POST['id'] ? (int)$_POST['id'] : time(),
+        'id' => $id,
         'title' => $_POST['title'],
         'summary' => $_POST['summary'],
         'full_content' => $_POST['full_content'],
@@ -26,10 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['title'])) {
         'date' => $_POST['date'],
         'image' => $image_path
     ];
+
     $found = false;
     if ($_POST['id']) {
         foreach ($news as $key => $post) {
-            if ($post['id'] == $_POST['id']) {
+            if ($post['id'] == $id) {
                 $news[$key] = $post_data;
                 $found = true;
                 break;
@@ -39,10 +52,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['title'])) {
     if (!$found) {
         array_unshift($news, $post_data);
     }
+    
     saveNews($news);
-    header('Location: manage_news.php');
+
+    // Lógica de redirecionamento com mensagem de sucesso
+    $action = $_POST['action'] ?? 'save_exit';
+
+    if ($action === 'save_continue') {
+        header('Location: manage_news.php?edit=' . $id . '&success=1');
+    } else {
+        header('Location: manage_news.php?success=1');
+    }
     exit;
 }
+
 if (isset($_GET['delete'])) { $news = getNews(); $id_to_delete = (int)$_GET['delete']; $news = array_filter($news, fn($post) => $post['id'] != $id_to_delete); saveNews(array_values($news)); header('Location: manage_news.php'); exit; }
 $all_news = getNews();
 $edit_post = null;
@@ -72,6 +95,12 @@ if (isset($_GET['edit'])) { $id_to_edit = (int)$_GET['edit']; foreach($all_news 
         </nav>
     </header>
     <main>
+        <?php if (isset($_GET['success'])): ?>
+            <div class="success-message" id="success-message">
+                Notícia salva com sucesso!
+            </div>
+        <?php endif; ?>
+
         <div class="form-container">
             <h2><?php echo $edit_post ? 'Editar Notícia' : 'Adicionar Nova Notícia'; ?></h2>
             <form method="POST" action="manage_news.php" enctype="multipart/form-data">
@@ -79,7 +108,6 @@ if (isset($_GET['edit'])) { $id_to_edit = (int)$_GET['edit']; foreach($all_news 
                 <input type="hidden" name="existing_image" value="<?php echo $edit_post['image'] ?? ''; ?>">
                 <div class="input-group"><label for="title">Título</label><input type="text" id="title" name="title" value="<?php echo htmlspecialchars($edit_post['title'] ?? ''); ?>" required></div>
                 <div class="input-group"><label for="date">Data da Publicação</label><input type="date" id="date" name="date" value="<?php echo htmlspecialchars($edit_post['date'] ?? date('Y-m-d')); ?>" required></div>
-                
                 <div class="input-group">
                     <label for="category">Categoria</label>
                     <select id="category" name="category" required>
@@ -89,18 +117,20 @@ if (isset($_GET['edit'])) { $id_to_edit = (int)$_GET['edit']; foreach($all_news 
                         <option value="Fundamental 2" <?php echo ($edit_post['category'] ?? '') == 'Fundamental 2' ? 'selected' : ''; ?>>Fundamental 2</option>
                     </select>
                 </div>
-                
                 <div class="input-group">
                     <label for="summary">Subtítulo (texto curto que aparece no banner)</label>
                     <textarea id="summary" name="summary" rows="3" required><?php echo htmlspecialchars($edit_post['summary'] ?? ''); ?></textarea>
                 </div>
-                
                 <div class="input-group"><label for="full_content">Conteúdo Completo da Notícia</label><textarea id="full_content" name="full_content" rows="15"><?php echo htmlspecialchars($edit_post['full_content'] ?? ''); ?></textarea></div>
                 <div class="input-group"><label for="image">Imagem de Destaque</label><input type="file" id="image" name="image" accept="image/*">
                     <?php if ($edit_post && !empty($edit_post['image'])): ?><p>Imagem atual: <img src="../<?php echo htmlspecialchars($edit_post['image']); ?>" width="100"></p><?php endif; ?>
                 </div>
-                <button type="submit"><?php echo $edit_post ? 'Atualizar Notícia' : 'Publicar Notícia'; ?></button>
-                <?php if ($edit_post): ?><a href="manage_news.php" class="cancel-btn">Cancelar Edição</a><?php endif; ?>
+                
+                <div class="form-actions" style="display: flex; gap: 10px;">
+                    <button type="submit" name="action" value="save_exit">Salvar e Sair</button>
+                    <button type="submit" name="action" value="save_continue">Salvar e Continuar Editando</button>
+                    <?php if ($edit_post): ?><a href="manage_news.php" class="cancel-btn">Cancelar</a><?php endif; ?>
+                </div>
             </form>
         </div>
         <div class="content-list">
@@ -127,5 +157,13 @@ if (isset($_GET['edit'])) { $id_to_edit = (int)$_GET['edit']; foreach($all_news 
         </div>
     </main>
 </div>
+<script>
+    const successMessage = document.getElementById('success-message');
+    if (successMessage) {
+        setTimeout(() => {
+            successMessage.style.display = 'none';
+        }, 3000);
+    }
+</script>
 </body>
 </html>

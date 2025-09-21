@@ -1,0 +1,141 @@
+/* ============================================= */
+/* ESTILOS DA PÁGINA 'HISTÓRIA'                  */
+/* ============================================= */
+
+/* Fundo da página e layout principal */
+.page-historia main {
+    background-color: #f8f9fa; /* Um cinza bem claro/esverdeado */
+}
+
+.history-section {
+    padding: 60px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Banner superior */
+.history-banner {
+    padding: 80px 0;
+    text-align: center;
+    background-image: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.7)), url('../Img/foto-colegio.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+}
+
+.history-banner h1 {
+    font-size: 3rem;
+}
+
+/* Estrutura de duas colunas */
+.two-column-layout {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+.two-column-layout .column-left { flex: 1; }
+.two-column-layout .column-right { flex: 2; }
+.two-column-layout.reverse .column-left { flex: 2; }
+.two-column-layout.reverse .column-right { flex: 1; }
+
+
+/* Estilos de texto */
+.history-section h2 {
+    font-size: 2.2rem;
+    color: #003366;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.history-section p {
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1.5em;
+}
+.blockquote {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #003366;
+    border-left: 4px solid #ffcc00;
+    padding-left: 25px;
+    margin-top: 20px;
+}
+.author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+.author-info img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.author-info span {
+    font-weight: 600;
+    color: #333;
+}
+
+
+/* Seção 'A Direção' */
+.direcao-photo {
+    text-align: center;
+}
+.direcao-photo img {
+    max-width: 250px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+.direcao-photo figcaption {
+    margin-top: 15px;
+    font-weight: 600;
+    color: #003366;
+}
+
+/* Acesso Rápido */
+.acesso-rapido-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.acesso-rapido-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    width: 150px;
+    transition: all 0.3s ease;
+}
+.acesso-rapido-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-color: #003366;
+}
+.acesso-rapido-item i {
+    font-size: 2rem;
+    color: #003366;
+}
+
+/* Mapa */
+.map-container {
+    height: 400px;
+    background-color: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .two-column-layout {
+        flex-direction: column;
+    }
+}

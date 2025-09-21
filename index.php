@@ -76,7 +76,7 @@
                     <h2>ENSINO FUNDAMENTAL I</h2>
                 </div>
             </a>
-            <a href="#" class="info-card card-dark-blue">
+            <a href="fundamental-2.php" class="info-card card-dark-blue">
                 <img src="Img/fundamental.2.jpg" alt="Ensino Fundamental II" class="card-img">
                 <div class="card-overlay">
                     <p class="card-text">Ampliação do conhecimento e preparação para os desafios futuros.</p>
@@ -104,35 +104,48 @@
 <section class="events-section">
     <div class="container">
         <h2 class="section-title">Nossos <strong>Eventos</strong></h2>
+        
         <?php
-            $events_file = 'data/events.json';
-            $events = file_exists($events_file) ? (json_decode(file_get_contents($events_file), true) ?? []) : [];
-            if (!empty($events)) { usort($events, function($a, $b) { return strtotime($b['date'] ?? 0) - strtotime($a['date'] ?? 0); }); }
-            $latest_events = array_slice($events, 0, 10);
-            $featured_event = (count($latest_events) >= 10) ? array_shift($latest_events) : null;
-            $small_events = $latest_events;
+        $events_file = 'data/events.json';
+        $events = file_exists($events_file) ? json_decode(file_get_contents($events_file), true) : [];
+        if (!empty($events)) {
+            usort($events, function($a, $b) { return strtotime($b['date'] ?? 0) - strtotime($a['date'] ?? 0); });
+        }
+        
+        $latest_events = array_slice($events, 0, 10);
+        $featured_event = (count($latest_events) >= 10) ? array_shift($latest_events) : null;
+        $small_events = $latest_events;
         ?>
+
         <?php if ($featured_event): ?>
             <div class="events-complex-grid">
                 <?php $cover_image_featured = !empty($featured_event['cover_image']) ? htmlspecialchars($featured_event['cover_image']) : (!empty($featured_event['images']) ? htmlspecialchars($featured_event['images'][0]) : 'img/placeholder.png'); ?>
                 <a href="evento-detalhe.php?id=<?php echo $featured_event['id']; ?>" class="event-card-large">
                     <img src="<?php echo $cover_image_featured; ?>" alt="<?php echo htmlspecialchars($featured_event['title']); ?>">
-                    <span><?php echo htmlspecialchars($featured_event['title']); ?></span>
+                    <span class="card-overlay-content">
+                        <p class="card-title-clamp"><?php echo htmlspecialchars($featured_event['title']); ?></p>
+                    </span>
                 </a>
+
                 <div class="events-small-grid">
                     <?php foreach ($small_events as $event): ?>
                         <?php $cover_image_small = !empty($event['cover_image']) ? htmlspecialchars($event['cover_image']) : (!empty($event['images']) ? htmlspecialchars($event['images'][0]) : 'img/placeholder.png'); ?>
                         <a href="evento-detalhe.php?id=<?php echo $event['id']; ?>" class="event-card-small">
                             <img src="<?php echo $cover_image_small; ?>" alt="<?php echo htmlspecialchars($event['title']); ?>">
-                            <span><?php echo htmlspecialchars($event['title']); ?></span>
+                            <span class="card-overlay-content">
+                                <p class="card-title-clamp"><?php echo htmlspecialchars($event['title']); ?></p>
+                            </span>
                         </a>
                     <?php endforeach; ?>
                 </div>
             </div>
         <?php else: ?>
-            <p style='color: #444; text-align: center;'>É necessário ter pelo menos 10 eventos cadastrados para exibir este layout.</p>
+            <p style='color: #fff; text-align: center;'>É necessário ter pelo menos 10 eventos cadastrados para exibir este layout.</p>
         <?php endif; ?>
-        <div class="ver-mais-wrapper"><a href="eventos.php" class="btn-ver-mais">Ver todos os eventos</a></div>
+
+        <div class="ver-mais-wrapper">
+            <a href="eventos.php" class="btn-ver-mais">Ver todos os eventos</a>
+        </div>
     </div>
 </section>
 
@@ -142,7 +155,9 @@
         <?php
             $testimonials_file = 'data/testimonials.json';
             $testimonials = file_exists($testimonials_file) ? (json_decode(file_get_contents($testimonials_file), true) ?? []) : [];
-            if (!empty($testimonials)) { usort($testimonials, function($a, $b) { return strtotime($b['date'] ?? 0) - strtotime($a['date'] ?? 0); }); }
+            if (!empty($testimonials)) {
+                usort($testimonials, function($a, $b) { return strtotime($b['date'] ?? 0) - strtotime($a['date'] ?? 0); });
+            }
         ?>
         <?php if (!empty($testimonials)): ?>
         <div class="swiper meu-slider-depoimentos">
@@ -215,8 +230,17 @@
             <?php
             $news_file = 'data/news.json';
             $all_news = file_exists($news_file) ? (json_decode(file_get_contents($news_file), true) ?? []) : [];
+
+            // Ordenar notícias por data da mais recente para a mais antiga
+            if (!empty($all_news)) {
+                usort($all_news, function($a, $b) {
+                    return strtotime($b['date'] ?? 0) - strtotime($a['date'] ?? 0);
+                });
+            }
+
             $latest_news = array_slice($all_news, 0, 3);
             setlocale(LC_TIME, 'pt_BR.utf-8', 'pt_BR', 'portuguese');
+
             if (empty($latest_news)) {
                 echo "<p style='grid-column: 1 / -1;'>Nenhuma notícia publicada recentemente.</p>";
             } else {

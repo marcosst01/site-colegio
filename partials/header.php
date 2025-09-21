@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Colégio Monteiro Lobato</title>
+  <title><?php echo htmlspecialchars($page_title ?? 'Colégio Monteiro Lobato'); ?></title>          
 
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/header.css">
@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="css/evento-detalhe.css">
   <link rel="stylesheet" href="css/noticia-detalhe.css">
   <link rel="stylesheet" href="css/container.principal.css">
+  <link rel="stylesheet" href="css/historia.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -67,7 +68,7 @@
             <ul class="submenu">
               <li><a href="educacao-infantil.php">Educação Infantil</a></li>
               <li><a href="fundamental-1.php">Fundamental I</a></li>
-              <li><a href="#">Fundamental II</a></li>
+              <li><a href="fundamental-2.php">Fundamental II</a></li>
             </ul>
           </li>
           <li><a href="noticias.php">Jornal Monteiro</a></li>

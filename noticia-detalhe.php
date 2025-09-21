@@ -1,6 +1,5 @@
 <?php
-include 'partials/header.php';
-
+// --- Carrega notícias ---
 $news_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $noticia = null;
 $noticias_recentes = [];
@@ -11,6 +10,7 @@ if (file_exists($news_file)) {
     $all_news = json_decode(file_get_contents($news_file), true) ?? [];
 }
 
+// Encontra a notícia atual
 if ($news_id > 0 && !empty($all_news)) {
     foreach ($all_news as $item) {
         if ($item['id'] === $news_id) {
@@ -18,26 +18,36 @@ if ($news_id > 0 && !empty($all_news)) {
             break;
         }
     }
+
+    // Pega as últimas 4 notícias (excluindo a atual)
     foreach ($all_news as $item) {
         if (count($noticias_recentes) < 4 && $item['id'] !== $news_id) {
             $noticias_recentes[] = $item;
         }
     }
 }
+
+// --- Título dinâmico ---
+if ($noticia) {
+    $page_title = htmlspecialchars($noticia['title']) . " - Colégio Monteiro Lobato";
+} else {
+    $page_title = "Notícia não encontrada - Colégio Monteiro Lobato";
+}
+
+include 'partials/header.php';
 ?>
 
 <main>
     <?php if ($noticia): ?>
         <?php 
-            // Define o idioma para Português
             setlocale(LC_TIME, 'pt_BR.utf-8', 'pt_BR', 'portuguese');
             $data_formatada = strftime('%d de %B de %Y', strtotime($noticia['date']));
             $foto_destaque = !empty($noticia['image']) ? $noticia['image'] : 'img/placeholder.png';
 
-            // Lógica do Tempo de Leitura
+            // Tempo de leitura estimado
             $word_count = str_word_count(strip_tags($noticia['full_content']));
             $reading_time = ceil($word_count / 200);
-            $reading_time = ($reading_time < 1) ? 1 : $reading_time; // Mínimo de 1 min
+            $reading_time = ($reading_time < 1) ? 1 : $reading_time;
             $reading_time_text = $reading_time . " min de leitura";
         ?>
         
@@ -63,7 +73,11 @@ if ($news_id > 0 && !empty($all_news)) {
                     <ul>
                         <?php if(!empty($noticias_recentes)): ?>
                             <?php foreach($noticias_recentes as $item_recente): ?>
-                                <li><a href="noticia-detalhe.php?id=<?php echo $item_recente['id']; ?>"><?php echo htmlspecialchars($item_recente['title']); ?></a></li>
+                                <li>
+                                    <a href="noticia-detalhe.php?id=<?php echo $item_recente['id']; ?>">
+                                        <?php echo htmlspecialchars($item_recente['title']); ?>
+                                    </a>
+                                </li>
                             <?php endforeach; ?>
                         <?php else: ?>
                             <li>Nenhuma outra notícia para mostrar.</li>
@@ -74,7 +88,11 @@ if ($news_id > 0 && !empty($all_news)) {
         </div>
 
     <?php else: ?>
-        <section class="secao-introducao"><div class="container" style="text-align: center;"><h2>Notícia não encontrada</h2></div></section>
+        <section class="secao-introducao">
+            <div class="container" style="text-align: center;">
+                <h2>Notícia não encontrada</h2>
+            </div>
+        </section>
     <?php endif; ?>
 </main>
 

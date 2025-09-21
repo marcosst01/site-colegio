@@ -1,6 +1,4 @@
 <?php
-include 'partials/header.php';
-
 // --- LÓGICA PRINCIPAL DA PÁGINA ---
 $event_id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 $evento = null;
@@ -31,6 +29,14 @@ if ($event_id > 0 && !empty($all_events)) {
         }
     }
 }
+
+// 🔹 Define o título da aba dinamicamente
+$page_title = $evento
+    ? htmlspecialchars($evento['title']) . " - Colégio Monteiro Lobato"
+    : "Evento não encontrado - Colégio Monteiro Lobato";
+
+// Inclui o header só depois de definir o título
+include 'partials/header.php';
 ?>
 
 <main>
@@ -58,7 +64,6 @@ if ($event_id > 0 && !empty($all_events)) {
                 
                 <?php
                     $images = $evento['images'] ?? [];
-                    // A foto de capa agora também fará parte da galeria
                     $images_per_page = 12;
                     $total_images = count($images);
                     $total_pages = ceil($total_images / $images_per_page);
